@@ -10,12 +10,12 @@ function BinarioADecimal(num) {
 }
 
 function DecimalABinario(num) {
-  var bin = [];
+  let miBinario = [];
   while (num > 0) {
-  bin.unshift(num % 2);
-  num >>= 1;
+    miBinario.unshift(num%2);
+    num=Math.floor(num/2);
   }
-  return bin.join('');
+  return miBinario.join('');
 }
 
 // No se pueden usar: 
