@@ -1,12 +1,12 @@
 "use strict";
 
 function BinarioADecimal(num) {
-  let sum = 0;
-
-  for (let i = 0; i < num.length; i++) {
-     sum += +num[i] * 2 ** (num.length - 1 - i);
+  let miLista = (num.split("")).reverse();
+  let decim=0;
+  for(let i=0; i < miLista.length; i++) {
+    decim+=Math.pow(2, i)*miLista[i];
   }
-  return sum;
+  return decim;
 }
 
 function DecimalABinario(num) {
