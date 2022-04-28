@@ -9,7 +9,7 @@ function nFactorial(n) {
   // el factorial de 3 es 6 (3 * 2 * 1)
   if(n==0||n==1) return 1;
   else if(n>1) return n*(nFactorial(n-1));
-  else return (nFactorial(n*-1))*-1;
+  else throw new Error('Este factorial no existe!');
 }
 
 function nFibonacci(n) {
@@ -29,7 +29,12 @@ function nFibonacci(n) {
 // size: Devuelve el número de elementos que contiene la queue.
 
 function Queue() {
-
+  Queue.prototype.enqueue = function(value){this.push(value)}
+  Queue.prototype.dequeue = function(value){
+    if(this.length<1) return undefined
+    else this.shift(value)
+  }
+  Queue.prototype.size = function(){this.length}
 }
 
 // No modifiquen nada debajo de esta linea
