@@ -29,12 +29,18 @@ function nFibonacci(n) {
 // size: Devuelve el número de elementos que contiene la queue.
 
 function Queue() {
-  Queue.prototype.enqueue = function(value){this.push(value)}
-  Queue.prototype.dequeue = function(value){
-    if(this.length<1) return undefined
-    else this.shift(value)
+  this.Array = [];
+  
+  Queue.prototype.enqueue = function (n) {
+    this.Array.push(n)
+    return this
   }
-  Queue.prototype.size = function(){this.length}
+  Queue.prototype.dequeue = function () {
+    return this.Array.shift()
+  }
+  Queue.prototype.size = function () {
+    return this.Array.length
+  }
 }
 
 // No modifiquen nada debajo de esta linea
