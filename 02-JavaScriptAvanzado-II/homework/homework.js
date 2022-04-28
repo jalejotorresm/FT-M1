@@ -9,7 +9,7 @@ function counter() {
   // newCounter(); // 2
   let number=0;
   return function(){
-    number+=1;
+    number++;
     return number;
   }
 }
@@ -28,7 +28,7 @@ function cacheFunction(cb) {
   // usá hasOwnProperty!
   var cache = {};
 	return function(x) {
-		if (cache.hasOwnProperty(x)){
+		if (!cache.hasOwnProperty(x)){
       cache[x] = cb(x);
     } 
     return cache[x];
