@@ -8,8 +8,8 @@ function nFactorial(n) {
   // ej:
   // el factorial de 3 es 6 (3 * 2 * 1)
   if(n==0||n==1) return 1;
-  else if(n>1) return n(n-1);
-  else return
+  else if(n>1) return n*(nFactorial(n-1));
+  else return (nFactorial(n*-1))*-1;
 }
 
 function nFibonacci(n) {
