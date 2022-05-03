@@ -68,31 +68,21 @@ function selectionSort(array) {
   // el array recibido como parámetro utilizando dos arreglos
   // Devolver el array ordenado resultante
   // Tu código:
-  let n = inputArr.length;
-        
-    for(let i = 0; i < n; i++) {
-        // Finding the smallest number in the subarray
-        let min = i;
-        for(let j = i+1; j < n; j++){
-            if(inputArr[j] < inputArr[min]) {
-                min=j; 
-            }
-         }
-         if (min != i) {
-             // Swapping the elements
-             let tmp = inputArr[i]; 
-             inputArr[i] = inputArr[min];
-             inputArr[min] = tmp;      
+  const list = [...array]
+  const len = list.length
+  for (let i = 0; i < len; i++) {
+      let min = i
+      for (let j = i + 1; j < len; j++) {
+        if (list[min] > list[j]) {
+            min = j
         }
-    }
-    return inputArr;
+        }
+        if (min !== i) {
+        [list[i], list[min]] = [list[min], list[i]]
+        }
+  }
+  return list
 }
-
-let num=array.indexOf(Math.max(array))
-let delNum=array.splice(num)
-array.push(parseInt(delNum))
-console.log(array)
-
 
 // No modificar nada debajo de esta línea
 // --------------------------------
