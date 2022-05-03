@@ -88,6 +88,11 @@ function selectionSort(array) {
     return inputArr;
 }
 
+let num=array.indexOf(Math.max(array))
+let delNum=array.splice(num)
+array.push(parseInt(delNum))
+console.log(array)
+
 
 // No modificar nada debajo de esta línea
 // --------------------------------
