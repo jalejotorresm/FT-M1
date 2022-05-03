@@ -48,16 +48,18 @@ function insertionSort(array) {
   // el array recibido como parámetro utilizando arreglos
   // Devolver el array ordenado resultante
   // Tu código:
-  for (let i = 1; i < nums.length; i++) {
-    let j = i - 1
-    let temp = nums[i]
-    while (j >= 0 && nums[j] > temp) {
-      nums[j + 1] = nums[j]
-      j--
+  let index = 1
+
+  while (index <= array.length){
+    let index1=index
+
+    while(index1 >= 1 && array[index1] < array[index1 - 1]){
+      [array[index1], array[index1 - 1]]=[array[index1 - 1], array[index1]]
+      index1--
     }
-    nums[j+1] = temp
+    index++
   }
-  return nums
+  return array
 }
 
 
