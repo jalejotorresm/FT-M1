@@ -6,8 +6,9 @@ function factorear(num) {
   // los factores por los cuales se va dividiendo a dicho número (De menor a mayor)
   // Ej: factorear(180) --> [1, 2, 2, 3, 3, 5] Ya que 1x2x2x3x3x5 = 180 y son todos números primos
   // Tu código:
-  var factores = [], 
-      divisor = 2;
+  var factores = [], divisor = 2;
+
+  if (num==1) factores.push(1)
 
   while(num>1){
     if(num % divisor === 0){
@@ -17,6 +18,7 @@ function factorear(num) {
     else divisor++;
     if (num===1) factores.unshift(1)
   }
+  
   return factores;
 }
 
