@@ -11,12 +11,18 @@
 // search: Busca un valor dentro de la lista. Puede recibir un valor o una función. Si no hubiera resultados, devuelve null.
 
 function LinkedList() {
-
+  this.head=null
+  this._lenght=0
 }
 
 function Node(value){
-
+  this.value=value
+  this.next=null
 }
+
+LinkedList.prototype.add=function(){}
+LinkedList.prototype.remove=function(){}
+LinkedList.prototype.search=function(){}
 
 // Hash Table( ver información en: https://es.wikipedia.org/wiki/Tabla_hash)
 // Una Hash table contiene un arreglo de "contenedores" o buckets donde puede guardar información.
@@ -31,7 +37,8 @@ function Node(value){
 //    - Retornar dicho valor.
 
 function HashTable() {
-
+  this.buckets=35;
+  this.containers=[];
 }
 
 
