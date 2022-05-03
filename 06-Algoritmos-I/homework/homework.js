@@ -2,26 +2,18 @@
 // No cambies los nombres de las funciones.
 
 function factorear(num) {
-  // Factorear el número recibido como parámetro y devolver en un array
-  // los factores por los cuales se va dividiendo a dicho número (De menor a mayor)
-  // Ej: factorear(180) --> [1, 2, 2, 3, 3, 5] Ya que 1x2x2x3x3x5 = 180 y son todos números primos
-  // Tu código:
-  let multiplicadores = ''
-    let factorial = 1;
-    for (let i = 2; i <= n; i++) {
-        factorial *= i
+  var factores = [], 
+      divisor = 2;
+
+  while(num>1){
+    if(num % divisor === 0){
+       factores.push(divisor); 
+       num= num/divisor;
     }
-    const numero = factorial
-    for (let j = 2; j <= factorial; j++) {
-        let contador = 0
-        while (factorial % j == 0) {
-            factorial /= j
-            contador++
-        }
-        if (contador == 1) multiplicadores += `${j} * `
-        if (contador > 1) multiplicadores += `${j}^${contador} * `
-    }
-    return `Resultado de descomponer ${n}! = ${numero}: ${multiplicadores.substr(0, multiplicadores.length - 3)}`
+    else divisor++;
+    if (num===1) factores.unshift(1)
+  }
+  return factores;
 }
 
 function bubbleSort(array) {
