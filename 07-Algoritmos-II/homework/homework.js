@@ -27,15 +27,23 @@ function mergeSort(array) {
   // el array recibido como parámetro
   // Devolver el array ordenado resultante
   // Tu código:
-  const half = array.length / 2
-  
-  // Base case or terminating case
-  if(array.length < 2){
-    return array 
+  if (array.length <= 1) return array
+
+  let half = parseInt(array.length / 2);
+  let left = mergeSort(array.slice(0, half));
+  let right = mergeSort(array.slice(half, array.length));
+
+  let merge = function(left, right) {
+      let data = [];
+
+      while(left.length > 0 && right.length > 0) {
+          data.push(left[0] <= right[0] ? left.shift() : right.shift())
+      }
+
+      return data.concat(left).concat(right);
   }
-  
-  const left = array.splice(0, half)
-  return merge(mergeSort(left),mergeSort(array))
+
+  return merge(left, right);
 }
 
 // No modificar nada debajo de esta línea
