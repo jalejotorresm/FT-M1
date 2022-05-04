@@ -65,24 +65,6 @@ function selectionSort(array) {
   // el array recibido como parámetro utilizando dos arreglos
   // Devolver el array ordenado resultante
   // Tu código:
-<<<<<<< HEAD
-  //we first copy the array to avoid modifying the original array, since objects are passed by reference in JS
-  const list = [...array]
-  const len = list.length
-  for (let i = 0; i < len; i++) {
-    let min = i
-    for (let j = i + 1; j < len; j++) {
-      if (list[min] > list[j]) {
-        min = j
-      }
-    }
-    if (min !== i) {
-      // a new minimum is found. Swap that with the current element
-      ;[list[i], list[min]] = [list[min], list[i]]
-    }
-  }
-  return list
-=======
   const list = [...array]
   const len = list.length
   for (let i = 0; i < len; i++) {
@@ -97,7 +79,6 @@ function selectionSort(array) {
         }
   }
   return list
->>>>>>> 34cba3933b5fdb5d16d177598186b452e4eaa347
 }
 
 // No modificar nada debajo de esta línea
